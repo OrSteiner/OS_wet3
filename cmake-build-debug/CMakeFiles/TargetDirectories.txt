@@ -1,3 +1,0 @@
-C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir
-C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/edit_cache.dir
