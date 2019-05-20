@@ -13,6 +13,8 @@ public:
 	void down(); // Block untill counter >0, and mark - One thread has entered the critical section.
 
 private:
+	int value;
+	pth
 	// TODO 
 };
 
