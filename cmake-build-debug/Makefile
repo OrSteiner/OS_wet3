@@ -149,6 +149,87 @@ PCQueue.cpp.s:
 	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/PCQueue.cpp.s
 .PHONY : PCQueue.cpp.s
 
+Part2/Game.obj: Part2/Game.cpp.obj
+
+.PHONY : Part2/Game.obj
+
+# target to build an object file
+Part2/Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj
+.PHONY : Part2/Game.cpp.obj
+
+Part2/Game.i: Part2/Game.cpp.i
+
+.PHONY : Part2/Game.i
+
+# target to preprocess a source file
+Part2/Game.cpp.i:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/Game.cpp.i
+.PHONY : Part2/Game.cpp.i
+
+Part2/Game.s: Part2/Game.cpp.s
+
+.PHONY : Part2/Game.s
+
+# target to generate assembly for a file
+Part2/Game.cpp.s:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/Game.cpp.s
+.PHONY : Part2/Game.cpp.s
+
+Part2/main.obj: Part2/main.cpp.obj
+
+.PHONY : Part2/main.obj
+
+# target to build an object file
+Part2/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj
+.PHONY : Part2/main.cpp.obj
+
+Part2/main.i: Part2/main.cpp.i
+
+.PHONY : Part2/main.i
+
+# target to preprocess a source file
+Part2/main.cpp.i:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/main.cpp.i
+.PHONY : Part2/main.cpp.i
+
+Part2/main.s: Part2/main.cpp.s
+
+.PHONY : Part2/main.s
+
+# target to generate assembly for a file
+Part2/main.cpp.s:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/main.cpp.s
+.PHONY : Part2/main.cpp.s
+
+Part2/utils.obj: Part2/utils.cpp.obj
+
+.PHONY : Part2/utils.obj
+
+# target to build an object file
+Part2/utils.cpp.obj:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj
+.PHONY : Part2/utils.cpp.obj
+
+Part2/utils.i: Part2/utils.cpp.i
+
+.PHONY : Part2/utils.i
+
+# target to preprocess a source file
+Part2/utils.cpp.i:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/utils.cpp.i
+.PHONY : Part2/utils.cpp.i
+
+Part2/utils.s: Part2/utils.cpp.s
+
+.PHONY : Part2/utils.s
+
+# target to generate assembly for a file
+Part2/utils.cpp.s:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/utils.cpp.s
+.PHONY : Part2/utils.cpp.s
+
 Semaphore.obj: Semaphore.cpp.obj
 
 .PHONY : Semaphore.obj
@@ -176,33 +257,6 @@ Semaphore.cpp.s:
 	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Semaphore.cpp.s
 .PHONY : Semaphore.cpp.s
 
-main.obj: main.cpp.obj
-
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -215,12 +269,18 @@ help:
 	@echo ... PCQueue.obj
 	@echo ... PCQueue.i
 	@echo ... PCQueue.s
+	@echo ... Part2/Game.obj
+	@echo ... Part2/Game.i
+	@echo ... Part2/Game.s
+	@echo ... Part2/main.obj
+	@echo ... Part2/main.i
+	@echo ... Part2/main.s
+	@echo ... Part2/utils.obj
+	@echo ... Part2/utils.i
+	@echo ... Part2/utils.s
 	@echo ... Semaphore.obj
 	@echo ... Semaphore.i
 	@echo ... Semaphore.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
 .PHONY : help
 
 

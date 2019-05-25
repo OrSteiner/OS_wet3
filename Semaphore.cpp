@@ -1,8 +1,7 @@
 #include "Semaphore.hpp"
 #include "Headers.hpp"
 
-<<<<<<< HEAD
-=======
+
 Semaphore::Semaphore() :size(0) {
     pthread_cond_init(&cond,NULL);
     pthread_mutex_init(&mutex,NULL);
@@ -33,4 +32,4 @@ void Semaphore::down() {
     size--;
     pthread_mutex_unlock(&mutex);
 }
->>>>>>> amit
+

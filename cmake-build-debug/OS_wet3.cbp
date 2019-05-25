@@ -93,13 +93,28 @@
 		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/PCQueue.hpp">
 			<Option target="OS_wet3"/>
 		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/Game.cpp">
+			<Option target="OS_wet3"/>
+		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/Game.hpp">
+			<Option target="OS_wet3"/>
+		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/Thread.hpp">
+			<Option target="OS_wet3"/>
+		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/main.cpp">
+			<Option target="OS_wet3"/>
+		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/utils.cpp">
+			<Option target="OS_wet3"/>
+		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/utils.hpp">
+			<Option target="OS_wet3"/>
+		</Unit>
 		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Semaphore.cpp">
 			<Option target="OS_wet3"/>
 		</Unit>
 		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Semaphore.hpp">
-			<Option target="OS_wet3"/>
-		</Unit>
-		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/main.cpp">
 			<Option target="OS_wet3"/>
 		</Unit>
 		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/CMakeLists.txt">

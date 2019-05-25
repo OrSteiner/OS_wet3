@@ -56,29 +56,29 @@ include CMakeFiles/OS_wet3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/OS_wet3.dir/flags.make
 
-CMakeFiles/OS_wet3.dir/main.cpp.obj: CMakeFiles/OS_wet3.dir/flags.make
-CMakeFiles/OS_wet3.dir/main.cpp.obj: CMakeFiles/OS_wet3.dir/includes_CXX.rsp
-CMakeFiles/OS_wet3.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\orsht\Documents\OS\hw3\OS_wet3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OS_wet3.dir/main.cpp.obj"
-	C:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OS_wet3.dir\main.cpp.obj -c C:\Users\orsht\Documents\OS\hw3\OS_wet3\main.cpp
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj: CMakeFiles/OS_wet3.dir/flags.make
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj: CMakeFiles/OS_wet3.dir/includes_CXX.rsp
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj: ../Part2/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\orsht\Documents\OS\hw3\OS_wet3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OS_wet3.dir\Part2\main.cpp.obj -c C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\main.cpp
 
-CMakeFiles/OS_wet3.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_wet3.dir/main.cpp.i"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\orsht\Documents\OS\hw3\OS_wet3\main.cpp > CMakeFiles\OS_wet3.dir\main.cpp.i
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_wet3.dir/Part2/main.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\main.cpp > CMakeFiles\OS_wet3.dir\Part2\main.cpp.i
 
-CMakeFiles/OS_wet3.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_wet3.dir/main.cpp.s"
-	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\orsht\Documents\OS\hw3\OS_wet3\main.cpp -o CMakeFiles\OS_wet3.dir\main.cpp.s
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_wet3.dir/Part2/main.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\main.cpp -o CMakeFiles\OS_wet3.dir\Part2\main.cpp.s
 
-CMakeFiles/OS_wet3.dir/main.cpp.obj.requires:
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.requires:
 
-.PHONY : CMakeFiles/OS_wet3.dir/main.cpp.obj.requires
+.PHONY : CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.requires
 
-CMakeFiles/OS_wet3.dir/main.cpp.obj.provides: CMakeFiles/OS_wet3.dir/main.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/main.cpp.obj.provides.build
-.PHONY : CMakeFiles/OS_wet3.dir/main.cpp.obj.provides
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.provides: CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.provides.build
+.PHONY : CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.provides
 
-CMakeFiles/OS_wet3.dir/main.cpp.obj.provides.build: CMakeFiles/OS_wet3.dir/main.cpp.obj
+CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.provides.build: CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj
 
 
 CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj: CMakeFiles/OS_wet3.dir/flags.make
@@ -131,23 +131,77 @@ CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj.provides: CMakeFiles/OS_wet3.dir/Semaph
 CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj.provides.build: CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj
 
 
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj: CMakeFiles/OS_wet3.dir/flags.make
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj: CMakeFiles/OS_wet3.dir/includes_CXX.rsp
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj: ../Part2/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\orsht\Documents\OS\hw3\OS_wet3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OS_wet3.dir\Part2\Game.cpp.obj -c C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\Game.cpp
+
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_wet3.dir/Part2/Game.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\Game.cpp > CMakeFiles\OS_wet3.dir\Part2\Game.cpp.i
+
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_wet3.dir/Part2/Game.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\Game.cpp -o CMakeFiles\OS_wet3.dir\Part2\Game.cpp.s
+
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.requires:
+
+.PHONY : CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.requires
+
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.provides: CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.provides.build
+.PHONY : CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.provides
+
+CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.provides.build: CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj
+
+
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj: CMakeFiles/OS_wet3.dir/flags.make
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj: CMakeFiles/OS_wet3.dir/includes_CXX.rsp
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj: ../Part2/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\orsht\Documents\OS\hw3\OS_wet3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj"
+	C:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OS_wet3.dir\Part2\utils.cpp.obj -c C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\utils.cpp
+
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OS_wet3.dir/Part2/utils.cpp.i"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\utils.cpp > CMakeFiles\OS_wet3.dir\Part2\utils.cpp.i
+
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OS_wet3.dir/Part2/utils.cpp.s"
+	C:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\orsht\Documents\OS\hw3\OS_wet3\Part2\utils.cpp -o CMakeFiles\OS_wet3.dir\Part2\utils.cpp.s
+
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.requires:
+
+.PHONY : CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.requires
+
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.provides: CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.provides.build
+.PHONY : CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.provides
+
+CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.provides.build: CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj
+
+
 # Object files for target OS_wet3
 OS_wet3_OBJECTS = \
-"CMakeFiles/OS_wet3.dir/main.cpp.obj" \
+"CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj" \
 "CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj" \
-"CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj"
+"CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj" \
+"CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj" \
+"CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj"
 
 # External object files for target OS_wet3
 OS_wet3_EXTERNAL_OBJECTS =
 
-OS_wet3.exe: CMakeFiles/OS_wet3.dir/main.cpp.obj
+OS_wet3.exe: CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj
 OS_wet3.exe: CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj
 OS_wet3.exe: CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj
+OS_wet3.exe: CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj
+OS_wet3.exe: CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj
 OS_wet3.exe: CMakeFiles/OS_wet3.dir/build.make
 OS_wet3.exe: CMakeFiles/OS_wet3.dir/linklibs.rsp
 OS_wet3.exe: CMakeFiles/OS_wet3.dir/objects1.rsp
 OS_wet3.exe: CMakeFiles/OS_wet3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\orsht\Documents\OS\hw3\OS_wet3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable OS_wet3.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\orsht\Documents\OS\hw3\OS_wet3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable OS_wet3.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\OS_wet3.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -155,9 +209,11 @@ CMakeFiles/OS_wet3.dir/build: OS_wet3.exe
 
 .PHONY : CMakeFiles/OS_wet3.dir/build
 
-CMakeFiles/OS_wet3.dir/requires: CMakeFiles/OS_wet3.dir/main.cpp.obj.requires
+CMakeFiles/OS_wet3.dir/requires: CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj.requires
 CMakeFiles/OS_wet3.dir/requires: CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj.requires
 CMakeFiles/OS_wet3.dir/requires: CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj.requires
+CMakeFiles/OS_wet3.dir/requires: CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj.requires
+CMakeFiles/OS_wet3.dir/requires: CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj.requires
 
 .PHONY : CMakeFiles/OS_wet3.dir/requires
 

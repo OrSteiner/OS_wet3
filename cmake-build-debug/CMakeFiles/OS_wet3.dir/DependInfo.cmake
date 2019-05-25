@@ -5,8 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/orsht/Documents/OS/hw3/OS_wet3/PCQueue.cpp" "C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj"
+  "C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/Game.cpp" "C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj"
+  "C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/main.cpp" "C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj"
+  "C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/utils.cpp" "C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj"
   "C:/Users/orsht/Documents/OS/hw3/OS_wet3/Semaphore.cpp" "C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj"
-  "C:/Users/orsht/Documents/OS/hw3/OS_wet3/main.cpp" "C:/Users/orsht/Documents/OS/hw3/OS_wet3/cmake-build-debug/CMakeFiles/OS_wet3.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

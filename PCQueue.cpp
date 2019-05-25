@@ -2,6 +2,7 @@
 
 template <class T> // Add definition in PCQueue.hpp if you need this constructor
 PCQueue<T>::PCQueue(): /* Init list*/ {
+
 }
 
 template <class T>
