@@ -16,4 +16,5 @@ add_executable(OS_wet3
         Part2/Game.hpp
         Part2/utils.cpp
         Part2/utils.hpp
-        Part2/Thread.hpp)
+        Part2/Thread.hpp
+        Part2/Thread_Consumer.hpp)

@@ -102,6 +102,9 @@
 		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/Thread.hpp">
 			<Option target="OS_wet3"/>
 		</Unit>
+		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/Thread_Consumer.h">
+			<Option target="OS_wet3"/>
+		</Unit>
 		<Unit filename="C:/Users/orsht/Documents/OS/hw3/OS_wet3/Part2/main.cpp">
 			<Option target="OS_wet3"/>
 		</Unit>

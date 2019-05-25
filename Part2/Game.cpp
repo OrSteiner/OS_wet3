@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Thread_Consumer.hpp"
 /*--------------------------------------------------------------------------------
 								
 --------------------------------------------------------------------------------*/
@@ -22,6 +23,12 @@ void Game::_init_game() {
 	// Create game fields - Consider using utils:read_file, utils::split
 	// Create & Start threads
 	// Testing of your implementation will presume all threads are started here
+	m_thread_num = thread_num();
+	for(uint int i = 0; i < m_thread_num; ++i){
+		Thread_Consumer* thread = new Thread_Consumer(i, this);
+		m_threadpool.push_back(thread);
+		m_threadpool[i]->start();
+	}
 }
 
 void Game::_step(uint curr_gen) {
@@ -64,6 +71,10 @@ inline void Game::print_board(const char* header) {
 
 }
 
+PCQueue<task> *Game::getTask_queue() const {
+	return task_queue;
+}
+
 
 /* Function sketch to use for printing the board. You will need to decide its placement and how exactly 
 	to bring in the field's parameters. 
@@ -77,7 +88,14 @@ inline void Game::print_board(const char* header) {
 			cout << u8"║" << endl;
 		}
 		cout << u8"╚" << string(u8"═") * field_width << u8"╝" << endl;
-*/ 
+*/
 
+/*--------------------------------------------------------------------------------
 
-
+--------------------------------------------------------------------------------*/
+Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_thread),
+								 interactive_on(params.interactive_on), print_on(params.print_on),
+								 filename(params.filename) {};
+uint Game::thread_num() const {
+	return __min(m_thread_num, num_of_rows);
+}
