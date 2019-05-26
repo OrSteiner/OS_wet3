@@ -52,6 +52,16 @@ void Game::_step(uint curr_gen) {
         end += num_of_rows_per_task;
         task_queue->push(item);
     }
+    // Waiting on all threads finishing this generation's tasks.
+    pthread_mutex_lock(&active_threads_lock);
+    while(!active_threads){
+        pthread_cond_wait(&active_threads_cond, &active_threads_lock);
+    }
+    pthread_mutex_unlock(&active_threads_lock);
+    // Swapping the board matrices.
+    bool** temp = current_board;
+    current_board = next_board;
+    next_board = temp;
 
 }
 
