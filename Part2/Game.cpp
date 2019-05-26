@@ -35,7 +35,8 @@ void Game::_step(uint curr_gen) {
 	// Push jobs to queue
 	// Wait for the workers to finish calculating 
 	// Swap pointers between current and next field 
-	// NOTE: Threads must not be started here - doing so will lead to a heavy penalty in your grade 
+	// NOTE: Threads must not be started here - doing so will lead to a heavy penalty in your grade
+    
 }
 
 void Game::_destroy_game(){

@@ -2,6 +2,6 @@
 --game step
 --game destroy
 --check PCQueue
---game_of_life_calc
+v-game_of_life_calc
 --timingzzzz
 --printingzzzz
