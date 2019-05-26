@@ -59,7 +59,7 @@ void Game::_step(uint curr_gen) {
     }
     pthread_mutex_unlock(&active_threads_lock);
     // Swapping the board matrices.
-    bool** temp = current_board;
+    bool_mat* temp = current_board;
     current_board = next_board;
     next_board = temp;
 
