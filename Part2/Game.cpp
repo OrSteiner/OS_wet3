@@ -47,6 +47,51 @@ void Game::_destroy_game(){
     }
 }
 
+void Game::game_of_life_calc(task item){
+    int width;
+    int life_counter = 0;
+    for(int i = item.start_raw; i <= item.end_raw; ++i){    // Calculate for each pixel
+        for(int j = 0; j < width; ++j){
+            if(i-1 >= 0){                   // First row calculation
+                if(j-1 >= 0){
+                    life_counter += current_board[i-1][j-1];
+                }
+                life_counter += current_board[i-1][j];
+                if(j+1 < width){
+                    life_counter += current_board[i-1][j+1];
+                }
+            }
+            if(j-1 >= 0){
+                life_counter += current_board[i][j-1];
+            }
+            life_counter += current_board[i][j];
+            if(j+1 < width){
+                life_counter += current_board[i][j+1];
+            }
+            if(i+1 < num_of_rows){
+                if(j-1 >= 0){
+                    life_counter += current_board[i+1][j-1];
+                }
+                life_counter += current_board[i+1][j];
+                if(j+1 < width){
+                    life_counter += current_board[i+1][j+1];
+                }
+            }
+            if(life_counter == 3){
+                next_board[i][j] = true;
+            }
+            else if(life_counter == 2 && current_board[i][j]){
+                next_board[i][j] = true;
+            }
+            else{
+                next_board[i][j] = false;
+            }
+        }
+    }
+
+
+}
+
 /*--------------------------------------------------------------------------------
 								
 --------------------------------------------------------------------------------*/
