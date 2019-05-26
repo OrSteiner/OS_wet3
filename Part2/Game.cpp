@@ -36,7 +36,23 @@ void Game::_step(uint curr_gen) {
 	// Wait for the workers to finish calculating 
 	// Swap pointers between current and next field 
 	// NOTE: Threads must not be started here - doing so will lead to a heavy penalty in your grade
-    
+    int start = 0;
+    int num_of_rows_per_task = num_of_rows/m_thread_num;
+    int end = num_of_rows_per_task - 1;
+    for(int i = 0; i < m_thread_num; ++i){
+        struct task item;
+        item.start_raw = start;
+        if(i == m_thread_num-1){
+            item.end_raw = num_of_rows - 1;
+        }
+        else {
+            item.end_raw = end;
+        }
+        start += num_of_rows_per_task;
+        end += num_of_rows_per_task;
+        task_queue->push(item);
+    }
+
 }
 
 void Game::_destroy_game(){
@@ -44,7 +60,7 @@ void Game::_destroy_game(){
 	// Not implemented in the Game's destructor for testing purposes. 
 	// All threads must be joined here
 	for (uint i = 0; i < m_thread_num; ++i) {
-        m_threadpool[j]->join();
+        m_threadpool[i]->join();
     }
 }
 
