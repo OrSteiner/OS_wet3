@@ -8,10 +8,16 @@ template <typename T>class PCQueue
 {
 
 public:
+	PCQueue<T>::PCQueue():
+
+/* Init list*/ {
+	};
 	// Blocks while queue is empty. When queue holds items, allows for a single
 	// thread to enter and remove an item from the front of the queue and return it. 
 	// Assumes multiple consumers.
-	T pop(); 
+	T pop(){
+
+	};
 
 	// Allows for producer to enter with *minimal delay* and push items to back of the queue.
 	// Hint for *minimal delay* - Allow the consumers to delay the producer as little as possible.  
@@ -21,8 +27,10 @@ public:
 
 private:
 	queue pc_queue;
-	Semaphore sem;
-	pthread_mutex_t mutex;
+	Semaphore qsize;
+	pthread_mutex_t critical_mutex;
+	pthread_cond_t waiting_writer;
+	int writers_num;
 
 };
 // Recommendation: Use the implementation of the std::queue for this exercise

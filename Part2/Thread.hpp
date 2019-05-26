@@ -18,7 +18,7 @@ public:
 	// Will not return until the internal thread has exited. 
 	void join()
 	{
-		pthread_join(thread_id(), NULL);
+		pthread_join(m_thread, NULL);
 	}
 
 	// Returns the user identifier

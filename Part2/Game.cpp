@@ -1,5 +1,6 @@
 #include "Game.hpp"
 #include "Thread_Consumer.hpp"
+#include "utils.hpp"
 /*--------------------------------------------------------------------------------
 								
 --------------------------------------------------------------------------------*/
@@ -69,16 +70,16 @@ void Game::_destroy_game(){
 	// Destroys board and frees all threads and resources 
 	// Not implemented in the Game's destructor for testing purposes. 
 	// All threads must be joined here
-	for (uint i = 0; i < m_thread_num; ++i) {
-        m_threadpool[i]->join();
-    }
     int start = -1;
-	int end = -1;
+    int end = -1;
     for(int i = 0; i < m_thread_num; ++i){
         struct task item;
         item.start_raw = start;
         item.end_raw = end;
         task_queue->push(item);
+    }
+	for (uint i = 0; i < m_thread_num; ++i) {
+        m_threadpool[i]->join();
     }
 }
 
@@ -174,8 +175,23 @@ PCQueue<task> *Game::getTask_queue() const {
 
 --------------------------------------------------------------------------------*/
 Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_thread),
-								 interactive_on(params.interactive_on), print_on(params.print_on),
-								 filename(params.filename) {};
+                                 interactive_on(params.interactive_on), print_on(params.print_on),
+                                 filename(params.filename) {
+    vector<string> matrix_by_raws = utils::read_lines(filename);
+    num_of_rows = (uint) matrix_by_raws.size();
+    vector<string> string_single_raw = utils::split(matrix_by_raws[0],' ');
+    int num_of_collumns = (uint) string_single_raw.size();
+    for(int i=0; i<num_of_rows; i++){
+        vector<string> single_raw = utils::split(matrix_by_raws[i],' ');
+        vector<bool> bool_single_raw;
+        for(int j=0; j<num_of_collumns; j++){
+            bool_single_raw.push_back((bool)std::stoi(string_single_raw[j]));
+        }
+        current_board->push_back(bool_single_raw);
+    }
+    m_thread_num = thread_num();
+};
+
 uint Game::thread_num() const {
 	return __min(m_thread_num, num_of_rows);
 }
