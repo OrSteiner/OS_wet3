@@ -24,7 +24,6 @@ void Game::_init_game() {
 	// Create game fields - Consider using utils:read_file, utils::split
 	// Create & Start threads
 	// Testing of your implementation will presume all threads are started here
-	m_thread_num = thread_num();
 	for(uint int i = 0; i < m_thread_num; ++i){
 		Thread_Consumer* thread = new Thread_Consumer(i, this);
 		m_threadpool.push_back(thread);
@@ -41,7 +40,7 @@ void Game::_step(uint curr_gen) {
     int num_of_rows_per_task = num_of_rows/m_thread_num;
     int end = num_of_rows_per_task - 1;
     for(int i = 0; i < m_thread_num; ++i){
-        struct task item;
+        task item;
         item.start_raw = start;
         if(i == m_thread_num-1){
             item.end_raw = num_of_rows - 1;
@@ -58,6 +57,7 @@ void Game::_step(uint curr_gen) {
     while(!active_threads){
         pthread_cond_wait(&active_threads_cond, &active_threads_lock);
     }
+    active_threads = m_thread_num;
     pthread_mutex_unlock(&active_threads_lock);
     // Swapping the board matrices.
     bool_mat* temp = current_board;
@@ -73,7 +73,7 @@ void Game::_destroy_game(){
     int start = -1;
     int end = -1;
     for(int i = 0; i < m_thread_num; ++i){
-        struct task item;
+        task item;
         item.start_raw = start;
         item.end_raw = end;
         task_queue->push(item);
@@ -194,4 +194,11 @@ Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_
 
 uint Game::thread_num() const {
 	return __min(m_thread_num, num_of_rows);
+}
+
+const vector<double> Game::gen_hist() const{
+    return m_gen_hist;
+}
+const vector<tile_record> Game::tile_hist() const{
+    return m_tile_hist;
 }
