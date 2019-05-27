@@ -12,7 +12,8 @@ public:
 	// Creates the internal thread via pthread_create 
 	bool start()
 	{
-		return pthread_create(&m_thread, NULL, entry_func, this) == 0;
+
+		return pthread_create(&m_thread, nullptr, entry_func, this) == 0;
 	}
 
 	// Will not return until the internal thread has exited. 

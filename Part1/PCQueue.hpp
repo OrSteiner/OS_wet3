@@ -10,10 +10,11 @@ template <typename T>class PCQueue
 
 public:
 
-	PCQueue(): qsize(0), writer(false), reader(false){
+	PCQueue(): qsize(), writer(false), reader(false){
 		pthread_cond_init(&waiting_writer,NULL);
 		pthread_mutex_init(&cond_mutex,NULL);
 		pthread_mutex_init(&critical_mutex,NULL);
+
 	};
 	// Blocks while queue is empty. When queue holds items, allows for a single
 	// thread to enter and remove an item from the front of the queue and return it. 

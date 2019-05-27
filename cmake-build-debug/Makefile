@@ -122,32 +122,32 @@ OS_wet3/fast:
 	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/build
 .PHONY : OS_wet3/fast
 
-PCQueue.obj: PCQueue.cpp.obj
+Part1/Semaphore.obj: Part1/Semaphore.cpp.obj
 
-.PHONY : PCQueue.obj
+.PHONY : Part1/Semaphore.obj
 
 # target to build an object file
-PCQueue.cpp.obj:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj
-.PHONY : PCQueue.cpp.obj
+Part1/Semaphore.cpp.obj:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part1/Semaphore.cpp.obj
+.PHONY : Part1/Semaphore.cpp.obj
 
-PCQueue.i: PCQueue.cpp.i
+Part1/Semaphore.i: Part1/Semaphore.cpp.i
 
-.PHONY : PCQueue.i
+.PHONY : Part1/Semaphore.i
 
 # target to preprocess a source file
-PCQueue.cpp.i:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/PCQueue.cpp.i
-.PHONY : PCQueue.cpp.i
+Part1/Semaphore.cpp.i:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part1/Semaphore.cpp.i
+.PHONY : Part1/Semaphore.cpp.i
 
-PCQueue.s: PCQueue.cpp.s
+Part1/Semaphore.s: Part1/Semaphore.cpp.s
 
-.PHONY : PCQueue.s
+.PHONY : Part1/Semaphore.s
 
 # target to generate assembly for a file
-PCQueue.cpp.s:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/PCQueue.cpp.s
-.PHONY : PCQueue.cpp.s
+Part1/Semaphore.cpp.s:
+	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part1/Semaphore.cpp.s
+.PHONY : Part1/Semaphore.cpp.s
 
 Part2/Game.obj: Part2/Game.cpp.obj
 
@@ -230,33 +230,6 @@ Part2/utils.cpp.s:
 	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Part2/utils.cpp.s
 .PHONY : Part2/utils.cpp.s
 
-Semaphore.obj: Semaphore.cpp.obj
-
-.PHONY : Semaphore.obj
-
-# target to build an object file
-Semaphore.cpp.obj:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj
-.PHONY : Semaphore.cpp.obj
-
-Semaphore.i: Semaphore.cpp.i
-
-.PHONY : Semaphore.i
-
-# target to preprocess a source file
-Semaphore.cpp.i:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Semaphore.cpp.i
-.PHONY : Semaphore.cpp.i
-
-Semaphore.s: Semaphore.cpp.s
-
-.PHONY : Semaphore.s
-
-# target to generate assembly for a file
-Semaphore.cpp.s:
-	$(MAKE) -f CMakeFiles\OS_wet3.dir\build.make CMakeFiles/OS_wet3.dir/Semaphore.cpp.s
-.PHONY : Semaphore.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -266,9 +239,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... OS_wet3
 	@echo ... edit_cache
-	@echo ... PCQueue.obj
-	@echo ... PCQueue.i
-	@echo ... PCQueue.s
+	@echo ... Part1/Semaphore.obj
+	@echo ... Part1/Semaphore.i
+	@echo ... Part1/Semaphore.s
 	@echo ... Part2/Game.obj
 	@echo ... Part2/Game.i
 	@echo ... Part2/Game.s
@@ -278,9 +251,6 @@ help:
 	@echo ... Part2/utils.obj
 	@echo ... Part2/utils.i
 	@echo ... Part2/utils.s
-	@echo ... Semaphore.obj
-	@echo ... Semaphore.i
-	@echo ... Semaphore.s
 .PHONY : help
 
 

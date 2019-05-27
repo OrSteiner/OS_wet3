@@ -24,6 +24,7 @@ struct task {			// The object inserted in the task queue. telling each thread wh
 	int start_raw;
 	int end_raw;
 };
+
 /*--------------------------------------------------------------------------------
 									Class Declaration
 --------------------------------------------------------------------------------*/
@@ -50,6 +51,7 @@ protected: // All members here are protected, instead of private for testing pur
 	void _step(uint curr_gen); 
 	void _destroy_game(); 
 	inline void print_board(const char* header);
+	inline void print_board_clion(const char* header);
 
 	uint m_gen_num; 			 		// The number of generations to run
 	uint m_thread_num; 			 		// Effective number of threads = min(thread_num, field_height)
@@ -59,13 +61,16 @@ protected: // All members here are protected, instead of private for testing pur
 	vector<Thread*> m_threadpool;		// A storage container for your threads. This acts as the threadpool.
 
 	PCQueue<task>* task_queue;			// The tasks queue.
-	bool_mat* current_board;				// The current game board to calculate from.
-	bool_mat* next_board;				// The next game board, that is being updated.
+	bool_mat current_board;			// The current game board to calculate from.
+	bool_mat next_board;				// The next game board, that is being updated.
+    //Board* board;                        // An object meant to hold to boards.
 
 	bool interactive_on; // Controls interactive mode - that means, prints the board as an animation instead of a simple dump to STDOUT 
 	bool print_on; // Allows the printing of the board. Turn this off when you are checking performance (Dry 3, last question)
 	string filename;					// The file name to read the board from
 	uint num_of_rows;					//
+
+
 	
 	// TODO: Add in your variables and synchronization primitives  
 

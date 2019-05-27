@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/OS_wet3.dir/Part2/main.cpp.obj"
-  "CMakeFiles/OS_wet3.dir/PCQueue.cpp.obj"
-  "CMakeFiles/OS_wet3.dir/Semaphore.cpp.obj"
+  "CMakeFiles/OS_wet3.dir/Part1/Semaphore.cpp.obj"
   "CMakeFiles/OS_wet3.dir/Part2/Game.cpp.obj"
   "CMakeFiles/OS_wet3.dir/Part2/utils.cpp.obj"
   "OS_wet3.pdb"
