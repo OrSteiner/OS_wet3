@@ -4,17 +4,21 @@
 #include "Semaphore.hpp"
 
 // Single Producer - Multiple Consumer queue
+
 template <typename T>class PCQueue
 {
 
 public:
-	PCQueue<T>::PCQueue():
 
-/* Init list*/ {
+	PCQueue(): qsize(0), writer(false), reader(false){
+		pthread_cond_init(&waiting_writer,NULL);
+		pthread_mutex_init(&cond_mutex,NULL);
+		pthread_mutex_init(&critical_mutex,NULL);
 	};
 	// Blocks while queue is empty. When queue holds items, allows for a single
 	// thread to enter and remove an item from the front of the queue and return it. 
 	// Assumes multiple consumers.
+
 	T pop(){
 		/*
 		 * Preventing empty queue access.
@@ -49,7 +53,8 @@ public:
 
 	// Allows for producer to enter with *minimal delay* and push items to back of the queue.
 	// Hint for *minimal delay* - Allow the consumers to delay the producer as little as possible.  
-	// Assumes single producer 
+	// Assumes single producer
+
 	void push(const T& item){
 		/*
 		 * Anouncing writers arrival.
@@ -76,7 +81,7 @@ public:
 
 
 private:
-	queue pc_queue;						// The tasks queue.
+	queue<T> pc_queue;						// The tasks queue.
 	Semaphore qsize;					// Semaphore for preventing access to empty queue.
 	pthread_mutex_t critical_mutex;		// Critical section lock - Max of one reader and one writer will wait here.
 	pthread_mutex_t cond_mutex;			// The lock for conditions changes.

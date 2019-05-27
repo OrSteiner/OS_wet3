@@ -24,8 +24,8 @@ void Game::_init_game() {
 	// Create game fields - Consider using utils:read_file, utils::split
 	// Create & Start threads
 	// Testing of your implementation will presume all threads are started here
-	for(uint int i = 0; i < m_thread_num; ++i){
-		Thread_Consumer* thread = new Thread_Consumer(i, this);
+	for(uint i = 0; i < m_thread_num; ++i){
+		auto thread = new Thread_Consumer(i, this);
 		m_threadpool.push_back(thread);
 		m_threadpool[i]->start();
 	}
@@ -81,6 +81,9 @@ void Game::_destroy_game(){
 	for (uint i = 0; i < m_thread_num; ++i) {
         m_threadpool[i]->join();
     }
+    for (uint i = 0; i < m_thread_num; ++i) {
+        delete(m_threadpool[i]);
+    }
 }
 
 void Game::game_of_life_calc(task item){
@@ -90,37 +93,37 @@ void Game::game_of_life_calc(task item){
         for(int j = 0; j < width; ++j){
             if(i-1 >= 0){                   // First row calculation
                 if(j-1 >= 0){
-                    life_counter += *(int*)current_board[i-1][j-1];
+                    life_counter += (*current_board)[i-1][j-1];
                 }
-                life_counter += *(int*)current_board[i-1][j];
+                life_counter += (*current_board)[i-1][j];
                 if(j+1 < width){
-                    life_counter += *(int*)current_board[i-1][j+1];
+                    life_counter += (*current_board)[i-1][j+1];
                 }
             }
             if(j-1 >= 0){
-                life_counter += *(int*)current_board[i][j-1];
+                life_counter += (*current_board)[i][j-1];
             }
-            life_counter += *(int*)current_board[i][j];
+            life_counter += (*current_board)[i][j];
             if(j+1 < width){
-                life_counter += *(int*)current_board[i][j+1];
+                life_counter += (*current_board)[i][j+1];
             }
             if(i+1 < num_of_rows){
                 if(j-1 >= 0){
-                    life_counter += *(int*)current_board[i+1][j-1];
+                    life_counter += (*current_board)[i+1][j-1];
                 }
-                life_counter += *(int*)current_board[i+1][j];
+                life_counter += (*current_board)[i+1][j];
                 if(j+1 < width){
-                    life_counter += *(int*)current_board[i+1][j+1];
+                    life_counter += (*current_board)[i+1][j+1];
                 }
             }
             if(life_counter == 3){
-                *(bool*)next_board[i][j] = true;
+                (*next_board)[i][j] = true;
             }
-            else if(life_counter == 2 && *(bool*)current_board[i][j]){
-                *(bool*)next_board[i][j] = true;
+            else if(life_counter == 2 && (*current_board)[i][j]){
+                (*next_board)[i][j] = true;
             }
             else{
-                *(bool*)next_board[i][j] = false;
+                (*next_board)[i][j] = false;
             }
         }
     }
@@ -180,17 +183,21 @@ Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_
     vector<string> matrix_by_raws = utils::read_lines(filename);
     num_of_rows = (uint) matrix_by_raws.size();
     vector<string> string_single_raw = utils::split(matrix_by_raws[0],' ');
-    int num_of_collumns = (uint) string_single_raw.size();
+    int num_of_columns = (uint) string_single_raw.size();
     for(int i=0; i<num_of_rows; i++){
         vector<string> single_raw = utils::split(matrix_by_raws[i],' ');
         vector<bool> bool_single_raw;
-        for(int j=0; j<num_of_collumns; j++){
+        for(int j=0; j<num_of_columns; j++){
             bool_single_raw.push_back((bool)std::stoi(string_single_raw[j]));
         }
         current_board->push_back(bool_single_raw);
     }
     m_thread_num = thread_num();
 };
+
+Game::~Game() {
+
+}
 
 uint Game::thread_num() const {
 	return __min(m_thread_num, num_of_rows);

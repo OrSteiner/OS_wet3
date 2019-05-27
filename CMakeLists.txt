@@ -8,7 +8,6 @@ include_directories(Part1)
 add_executable(OS_wet3
         Part2/main.cpp
         Part1/Headers.hpp
-        Part1/PCQueue.cpp
         Part1/PCQueue.hpp
         Part1/Semaphore.hpp
         Part1/Semaphore.cpp
