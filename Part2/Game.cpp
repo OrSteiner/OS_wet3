@@ -72,15 +72,24 @@ void Game::_destroy_game(){
 	// All threads must be joined here
     int start = -1;
     int end = -1;
+
+    // Inserting poison tasks into task queue.
+
     for(int i = 0; i < m_thread_num; ++i){
         task item;
         item.start_raw = start;
         item.end_raw = end;
         task_queue->push(item);
     }
+
+    // Waiting with main thread for all created threads to exit.
+
 	for (uint i = 0; i < m_thread_num; ++i) {
         m_threadpool[i]->join();
     }
+
+    // Freeing the memory allocated by new on Threads' creation.
+
     for (uint i = 0; i < m_thread_num; ++i) {
         delete(m_threadpool[i]);
     }
@@ -136,6 +145,9 @@ void Game::game_of_life_calc(task item){
 --------------------------------------------------------------------------------*/
 inline void Game::print_board(const char* header) {
 
+    int width = (*current_board)[0].size();
+    int hight = (*current_board).size();
+
 	if(print_on){ 
 
 		// Clear the screen, to create a running animation 
@@ -145,8 +157,16 @@ inline void Game::print_board(const char* header) {
 		// Print small header if needed
 		if (header != nullptr)
 			cout << "<------------" << header << "------------>" << endl;
-		
-		// TODO: Print the board 
+
+        cout << u8"╔" << string(u8"═") * width << u8"╗" << endl;
+        for (uint i = 0; i < hight; ++i) {
+            cout << u8"║";
+            for (uint j = 0; j < width; ++j) {
+                cout << ((*current_board)[i][j] ? u8"█" : u8"░");
+            }
+            cout << u8"║" << endl;
+        }
+        cout << u8"╚" << string(u8"═") * width << u8"╝" << endl;
 
 		// Display for GEN_SLEEP_USEC micro-seconds on screen 
 		if(interactive_on)
@@ -195,9 +215,7 @@ Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_
     m_thread_num = thread_num();
 };
 
-Game::~Game() {
-
-}
+Game::~Game() = default;
 
 uint Game::thread_num() const {
 	return __min(m_thread_num, num_of_rows);
