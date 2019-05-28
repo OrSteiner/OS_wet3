@@ -3,3 +3,5 @@ EffectiveThreadNum,GenNum,Gen_Rate[1/us],Avg_Gen_Time[us],Tile_Rate[1/us],Avg_Ti
 1,10,0.00250627,399,0,nan,3990
 1,10,0.00501253,199.5,0,nan,1995
 1,10,0.0100301,99.7,0,nan,997
+5,10,0.00502008,199.2,0,nan,1992
+10,10,0.00250627,399,0,nan,3990

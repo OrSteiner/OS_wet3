@@ -61,8 +61,8 @@ protected: // All members here are protected, instead of private for testing pur
 	vector<Thread*> m_threadpool;		// A storage container for your threads. This acts as the threadpool.
 
 	PCQueue<task>* task_queue;			// The tasks queue.
-	bool_mat current_board;			// The current game board to calculate from.
-	bool_mat next_board;				// The next game board, that is being updated.
+	bool_mat* current_board;			// The current game board to calculate from.
+	bool_mat* next_board;				// The next game board, that is being updated.
     //Board* board;                        // An object meant to hold to boards.
 
 	bool interactive_on; // Controls interactive mode - that means, prints the board as an animation instead of a simple dump to STDOUT 

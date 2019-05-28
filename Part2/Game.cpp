@@ -91,9 +91,9 @@ void Game::_step(uint curr_gen) {
     active_threads = m_thread_num;
     pthread_mutex_unlock(&active_threads_lock);
     // Swapping the board matrices.
-    //bool_mat* temp = current_board;
+    bool_mat* temp = current_board;
     current_board = next_board;
-    //next_board = temp;
+    next_board = temp;
 
 }
 
@@ -127,42 +127,42 @@ void Game::_destroy_game(){
 }
 
 void Game::game_of_life_calc(task item){
-    int width = (int)current_board.at(0).size();
+    int width = (int)current_board->at(0).size();
     int life_counter = 0;
     for(int i = item.start_raw; i <= item.end_raw; ++i){    // Calculate for each pixel
         for(int j = 0; j < width; ++j){
             if(i-1 >= 0){                   // First row calculation
                 if(j-1 >= 0){
-                    life_counter += (current_board).at(i-1).at(j-1);
+                    life_counter += (current_board)->at(i-1).at(j-1);
                 }
-                life_counter += (current_board).at(i-1).at(j);
+                life_counter += (current_board)->at(i-1).at(j);
                 if(j+1 < width){
-                    life_counter += (current_board).at(i-1).at(j+1);
+                    life_counter += (current_board)->at(i-1).at(j+1);
                 }
             }
             if(j-1 >= 0){
-                life_counter += (current_board).at(i).at(j-1);
+                life_counter += (current_board)->at(i).at(j-1);
             }
             if(j+1 < width){
-                life_counter += (current_board).at(i).at(j+1);
+                life_counter += (current_board)->at(i).at(j+1);
             }
             if(i+1 < num_of_rows){
                 if(j-1 >= 0){
-                    life_counter += (current_board).at(i+1).at(j-1);
+                    life_counter += (current_board)->at(i+1).at(j-1);
                 }
-                life_counter += (current_board).at(i+1).at(j);
+                life_counter += (current_board)->at(i+1).at(j);
                 if(j+1 < width){
-                    life_counter += (current_board).at(i+1).at(j+1);
+                    life_counter += (current_board)->at(i+1).at(j+1);
                 }
             }
             if(life_counter == 3){
-                (next_board).at(i).at(j) = true;
+                (next_board)->at(i).at(j) = true;
             }
-            else if(life_counter == 2 && (current_board).at(i).at(j)){
-                (next_board).at(i).at(j) = true;
+            else if(life_counter == 2 && (current_board)->at(i).at(j)){
+                (next_board)->at(i).at(j) = true;
             }
             else{
-                (next_board).at(i).at(j) = false;
+                (next_board)->at(i).at(j) = false;
             }
         life_counter = 0;
         }
@@ -176,8 +176,8 @@ void Game::game_of_life_calc(task item){
 --------------------------------------------------------------------------------*/
 inline void Game::print_board(const char* header) {
 
-    int width = (int)(current_board.at(0).size());
-    int hight = (int)current_board.size();
+    int width = (int)(current_board->at(0).size());
+    int hight = (int)current_board->size();
 
 	if(print_on){ 
 
@@ -193,7 +193,7 @@ inline void Game::print_board(const char* header) {
         for (uint i = 0; i < hight; ++i) {
             cout << u8"║";
             for (uint j = 0; j < width; ++j) {
-                cout << (current_board.at(i).at(j) ? u8"█" : u8"░");
+                cout << (current_board->at(i).at(j) ? u8"█" : u8"░");
             }
             cout << u8"║" << endl;
         }
@@ -207,14 +207,14 @@ inline void Game::print_board(const char* header) {
 }
 
 inline void Game::print_board_clion(const char* header){
-    int width = (int)(current_board.at(0).size());
-    int hight = (int)current_board.size();
+    int width = (int)(current_board->at(0).size());
+    int hight = (int)current_board->size();
 
     //cout << "_" << string(u8"═") * width << "_" << endl;
     for (uint i = 0; i < hight; ++i) {
         //cout << u8"║";
         for (uint j = 0; j < width; ++j) {
-            cout << (current_board.at(i).at(j) ? 1 : 0);
+            cout << (current_board->at(i).at(j) ? 1 : 0);
         }
         cout << endl;
     }
@@ -247,6 +247,8 @@ PCQueue<task> *Game::getTask_queue() const {
 Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_thread),
                                  interactive_on(params.interactive_on), print_on(params.print_on),
                                  filename(params.filename) {
+    current_board = new bool_mat;
+    next_board = new bool_mat;
     vector<string> matrix_by_rows = utils::read_lines(filename);
     num_of_rows = (uint) matrix_by_rows.size();
     vector<string> string_single_raw = utils::split(matrix_by_rows.at(0),' ');
@@ -257,20 +259,22 @@ Game::Game(game_params params) : m_gen_num(params.n_gen), m_thread_num(params.n_
         for(int j=0; j<num_of_columns; j++){
             bool_single_row.push_back((bool)std::stoi(single_row.at(j)));
         }
-        current_board.push_back(bool_single_row);
+        current_board->push_back(bool_single_row);
     }
     m_thread_num = thread_num();
     task_queue = new PCQueue<task>();
     active_threads = m_thread_num;
     pthread_cond_init(&active_threads_cond, NULL);
     pthread_mutex_init(&active_threads_lock, NULL);
-    next_board.resize(num_of_rows);
+    next_board->resize(num_of_rows);
     for(int i = 0; i < num_of_rows; ++i){
-        next_board.at(i).resize(num_of_columns);
+        next_board->at(i).resize(num_of_columns);
     }
 };
 
 Game::~Game(){
+    delete(current_board);
+    delete(next_board);
     delete(task_queue);
 }
 
