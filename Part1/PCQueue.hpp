@@ -47,7 +47,7 @@ public:
 		 */
 		pthread_mutex_lock(&cond_mutex);
 		reader = false;
-		pthread_cond_broadcast(&cond_mutex);
+		pthread_cond_broadcast(&waiting_writer);
 		pthread_mutex_unlock(&cond_mutex);
 		return item;
 	};
@@ -76,7 +76,7 @@ public:
 		 */
 		pthread_mutex_lock(&cond_mutex);
 		writer = false;
-		pthread_cond_broadcast(&cond_mutex);
+		pthread_cond_broadcast(&waiting_writer);
 		pthread_mutex_unlock(&cond_mutex);
 	};
 
